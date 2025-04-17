@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Companies - Growtern</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="website icon" type="png" href="icon.png">
+    <link rel="stylesheet" href="companies.css">
+    
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>Growtern</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="companies.html" class="active">Companies</a></li>
+                    <li><a href="index.html">Internships</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="about_us.html">About</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-login">Login</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section  class="hero">
+        <div class="container">
+            <h2>Find Your Dream Internship</h2>
+            <p>Browse through top companies offering internships in various fields. Filter by industry, location, or duration to find the perfect match for your skills and interests.</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Search companies (e.g. 'Google', 'Marketing', 'Remote')">
+                <button ><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        
+    </section >
+    
+
+    <!-- Companies Section -->
+    <section id="comp" class="companies-section">
+        <div  class="container">
+            <div  class="section-header">
+                <h2 >Explore Companies</h2>
+                <p >Discover organizations that offer incredible internship opportunities to help you kickstart your career.</p>
+            </div>
+            
+            <div  class="filter-options">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="tech">Technology</button>
+                <button class="filter-btn" data-filter="finance">Finance</button>
+                <button class="filter-btn" data-filter="marketing">Marketing</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+                <button class="filter-btn" data-filter="healthcare" >Healthcare</button>
+            </div>
+            
+            <div class="companies-grid">
+                <!-- Company Card 1 -->
+                <div class="company-card" data-category="tech">
+                    <div class="company-logo">
+                        <img src="https://logo.clearbit.com/google.com" alt="Google Logo">
+                    </div>
+                    <div class="company-info">
+                        <h3>Google</h3>
+                        <p>Technology • Mountain View, CA</p>
+                        <div class="company-stats">
+                            <div class="stat">
+                                <div class="stat-value">250+</div>
+                                <div class="stat-label">Internships</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">4.9</div>
+                                <div class="stat-label">Rating</div>
+                            </div>
+                        </div>
+                        <button class="view-btn">View Opportunities</button>
+                    </div>
+                </div>
+                
+                <!-- Company Card 2 -->
+                <div class="company-card" data-category="tech">
+                    <div class="company-logo">
+                        <img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft Logo">
+                    </div>
+                    <div class="company-info">
+                        <h3>Microsoft</h3>
+                        <p>Technology • Redmond, WA</p>
+                        <div class="company-stats">
+                            <div class="stat">
+                                <div class="stat-value">180+</div>
+                                <div class="stat-label">Internships</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">4.7</div>
+                                <div class="stat-label">Rating</div>
+                            </div>
+                        </div>
+                        <button class="view-btn">View Opportunities</button>
+                    </div>
+                </div>
+                
+                <!-- Company Card 3 -->
+                <div class="company-card" data-category="finance">
+                    <div class="company-logo">
+                        <img src="https://logo.clearbit.com/goldmansachs.com" alt="Goldman Sachs Logo">
+                    </div>
+                    <div class="company-info">
+                        <h3>Goldman Sachs</h3>
+                        <p>Finance • New York, NY</p>
+                        <div class="company-stats">
+                            <div class="stat">
+                                <div class="stat-value">120+</div>
+                                <div class="stat-label">Internships</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">4.5</div>
+                                <div class="stat-label">Rating</div>
+                            </div>
+                        </div>
+                        <button class="view-btn">View Opportunities</button>
+                    </div>
+                </div>
+                
+                <!-- Company Card 4 -->
+                <div class="company-card" data-category="marketing">
+                    <div class="company-logo">
+                        <img src="https://logo.clearbit.com/ogilvy.com" alt="Ogilvy Logo">
+                    </div>
+                    <div class="company-info">
+                        <h3>Ogilvy</h3>
+                        <p>Marketing • New York, NY</p>
+                        <div class="company-stats">
+                            <div class="stat">
+                                <div class="stat-value">75+</div>
+                                <div class="stat-label">Internships</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">4.3</div>
+                                <div class="stat-label">Rating</div>
+                            </div>
+                        </div>
+                        <button class="view-btn">View Opportunities</button>
+                    </div>
+                </div>
+                
+                <!-- Company Card 5 -->
+                <div class="company-card" data-category="design">
+                    <div class="company-logo">
+                        <img src="https://logo.clearbit.com/idEO.com" alt="IDEO Logo">
+                    </div>
+                    <div class="company-info">
+                        <h3>IDEO</h3>
+                        <p>Design • Palo Alto, CA</p>
+                        <div class="company-stats">
+                            <div class="stat">
+                                <div class="stat-value">40+</div>
+                                <div class="stat-label">Internships</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">4.8</div>
+                                <div class="stat-label">Rating</div>
+                            </div>
+                        </div>
+                        <button class="view-btn">View Opportunities</button>
+                    </div>
+                </div>
+                
+                <!-- Company Card 6 -->
+                <div class="company-card" data-category="healthcare">
+                    <div class="company-logo">
+                        <img src="https://logo.clearbit.com/johnsonandjohnson.com" alt="Johnson & Johnson Logo">
+                    </div>
+                    <div class="company-info">
+                        <h3>Johnson & Johnson</h3>
+                        <p>Healthcare • New Brunswick, NJ</p>
+                        <div class="company-stats">
+                            <div class="stat">
+                                <div class="stat-value">90+</div>
+                                <div class="stat-label">Internships</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">4.4</div>
+                                <div class="stat-label">Rating</div>
+                            </div>
+                        </div>
+                        <button class="view-btn">View Opportunities</button>
+                    </div>
+                </div>
+                
+                <!-- Company Card 7 -->
+                <div class="company-card" data-category="tech">
+                    <div class="company-logo">
+                        <img src="https://logo.clearbit.com/amazon.com" alt="Amazon Logo">
+                    </div>
+                    <div class="company-info">
+                        <h3>Amazon</h3>
+                        <p>Technology • Seattle, WA</p>
+                        <div class="company-stats">
+                            <div class="stat">
+                                <div class="stat-value">200+</div>
+                                <div class="stat-label">Internships</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">4.2</div>
+                                <div class="stat-label">Rating</div>
+                            </div>
+                        </div>
+                        <button class="view-btn">View Opportunities</button>
+                    </div>
+                </div>
+                
+                <!-- Company Card 8 -->
+                <div class="company-card" data-category="finance">
+                    <div class="company-logo">
+                        <img src="https://logo.clearbit.com/jpmorganchase.com" alt="JPMorgan Chase Logo">
+                    </div>
+                    <div class="company-info">
+                        <h3>JPMorgan Chase</h3>
+                        <p>Finance • New York, NY</p>
+                        <div class="company-stats">
+                            <div class="stat">
+                                <div class="stat-value">150+</div>
+                                <div class="stat-label">Internships</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">4.3</div>
+                                <div class="stat-label">Rating</div>
+                            </div>
+                        </div>
+                        <button class="view-btn">View Opportunities</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Companies -->
+    <section class="featured-companies">
+        <div class="container">
+            <div class="featured-header">
+                <h2>Featured Companies</h2>
+                <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="companies-carousel">
+                <div class="companies-slider">
+                    <div class="featured-company">
+                        <img src="https://logo.clearbit.com/airbnb.com" alt="Airbnb Logo">
+                        <h3>Airbnb</h3>
+                        <p>Join the team that's redefining travel and hospitality worldwide.</p>
+                        <button class="featured-btn">View Internships</button>
+                    </div>
+                    
+                    <div class="featured-company">
+                        <img src="https://logo.clearbit.com/spotify.com" alt="Spotify Logo">
+                        <h3>Spotify</h3>
+                        <p>Help shape the future of music and audio experiences.</p>
+                        <button class="featured-btn">View Internships</button>
+                    </div>
+                    
+                    <div class="featured-company">
+                        <img src="https://logo.clearbit.com/tesla.com" alt="Tesla Logo">
+                        <h3>Tesla</h3>
+                        <p>Accelerate the world's transition to sustainable energy.</p>
+                        <button class="featured-btn">View Internships</button>
+                    </div>
+                    
+                    <div class="featured-company">
+                        <img src="https://logo.clearbit.com/nike.com" alt="Nike Logo">
+                        <h3>Nike</h3>
+                        <p>Bring innovation and inspiration to every athlete in the world.</p>
+                        <button class="featured-btn">View Internships</button>
+                    </div>
+                    
+                    <div class="featured-company">
+                        <img src="https://logo.clearbit.com/spacex.com" alt="SpaceX Logo">
+                        <h3>SpaceX</h3>
+                        <p>Help make humanity multiplanetary through space exploration.</p>
+                        <button class="featured-btn">View Internships</button>
+                    </div>
+                </div>
+                
+                <div class="carousel-nav">
+                    <div class="carousel-dot active"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
+                    <div class="carousel-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Students Say</h2>
+                <p>Hear from students who found their dream internships through Growtern.</p>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    Growtern made it so easy to find and apply for internships. I landed my dream internship at Google through their platform, and the application process was seamless. The resources and guidance they provided were invaluable.
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-img">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson">
+                    </div>
+                    <div class="author-info">
+                        <h4>Sarah Johnson</h4>
+                        <p>Software Engineering Intern at Google</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Stay Updated on New Opportunities</h2>
+            <p>Subscribe to our newsletter to receive the latest internship postings and career advice directly to your inbox.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Growtern</h3>
+                    <p>Connecting students with the best internship opportunities worldwide.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>For Students</h3>
+                    <ul>
+                        <li><a href="index.html">Browse Internships</a></li>
+                        <li><a href="#comp">Browse Companies</a></li>
+                        <li><a href="resources.html">Career Resources</a></li>
+                        <li><a href="#">Application Tips</a></li>
+                        <li><a href="about_us.html">Success Stories</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>For Employers</h3>
+                    <ul>
+                        <li><a href="#">Post an Internship</a></li>
+                        <li><a href="#">Browse Students</a></li>
+                        <li><a href="#">Recruitment Solutions</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="about_us.html">Success Stories</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="resources.html">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Growtern. All rights reserved. | <a href="terms.html" style="color: #adb5bd;">Privacy Policy</a> | <a href="terms.html" style="color: #adb5bd;">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Filter Companies
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const companyCards = document.querySelectorAll('.company-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    const filterValue = button.getAttribute('data-filter');
+                    
+                    companyCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Company Search Functionality
+            const searchInput = document.querySelector('.search-bar input');
+            searchInput.addEventListener('input', () => {
+                const searchTerm = searchInput.value.toLowerCase();
+                
+                companyCards.forEach(card => {
+                    const companyName = card.querySelector('h3').textContent.toLowerCase();
+                    if (companyName.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+            
+            // Featured Companies Carousel
+            const slider = document.querySelector('.companies-slider');
+            const dots = document.querySelectorAll('.carousel-dot');
+            let currentSlide = 0;
+            
+            function goToSlide(slideIndex) {
+                slider.scrollTo({
+                    left: slideIndex * 320,
+                    behavior: 'smooth'
+                });
+                
+                dots.forEach(dot => dot.classList.remove('active'));
+                dots[slideIndex].classList.add('active');
+                currentSlide = slideIndex;
+            }
+            
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    goToSlide(index);
+                });
+            });
+            
+            // Auto-advance carousel
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % dots.length;
+                goToSlide(currentSlide);
+            }, 5000);
+            
+            // Newsletter Form Submission
+            const newsletterForm = document.querySelector('.newsletter-form');
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = newsletterForm.querySelector('input').value;
+                if (email) {
+                    alert(`Thank you for subscribing with ${email}! You'll receive our newsletter soon.`);
+                    newsletterForm.querySelector('input').value = '';
+                }
+            });
+            
+            // View Button Click
+            const viewButtons = document.querySelectorAll('.view-btn, .featured-btn');
+            viewButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const companyName = button.closest('.company-card, .featured-company').querySelector('h3').textContent;
+                    alert(`Redirecting to ${companyName} internships page...`);
+                    // In a real implementation, this would redirect to the company's page
+                    // window.location.href = `/companies/${companyName.toLowerCase().replace(/ /g, '-')}`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

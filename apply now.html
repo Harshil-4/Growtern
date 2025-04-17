@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now | Growtern</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="website icon" type="png" href="icon.png">
+    <link rel="stylesheet" href="apply.css">
+    
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <h2>Apply Now</h2>
+            <p>Join the Growtern community and launch your career</p>
+        </div>
+
+        <form class="application-form" id="internshipApplication">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="university">University/College</label>
+                <input type="text" id="university" name="university" required>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="major">Major/Field of Study</label>
+                    <input type="text" id="major" name="major" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="graduation">Expected Graduation</label>
+                    <select id="graduation" name="graduation" required>
+                        <option value="">Select graduation year</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="resume">Resume/CV</label>
+                <div class="file-upload">
+                    <label class="file-upload-btn">
+                        <div class="file-upload-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <div>Click to upload or drag and drop</div>
+                        <div class="file-upload-text">PDF, DOC, DOCX (Max 5MB)</div>
+                        <input type="file" class="file-upload-input" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+                    </label>
+                </div>
+                <div class="uploaded-files" id="resumePreview"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="coverLetter">Cover Letter (Optional)</label>
+                <div class="file-upload">
+                    <label class="file-upload-btn">
+                        <div class="file-upload-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <div>Click to upload or drag and drop</div>
+                        <div class="file-upload-text">PDF, DOC, DOCX (Max 5MB)</div>
+                        <input type="file" class="file-upload-input" id="coverLetter" name="coverLetter" accept=".pdf,.doc,.docx">
+                    </label>
+                </div>
+                <div class="uploaded-files" id="coverLetterPreview"></div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="portfolio">Portfolio/Website (Optional)</label>
+                    <input type="url" id="portfolio" name="portfolio" placeholder="https://">
+                </div>
+                
+                <div class="form-group">
+                    <label for="linkedin">LinkedIn Profile (Optional)</label>
+                    <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="github">GitHub Profile (Optional)</label>
+                <input type="url" id="github" name="github" placeholder="https://github.com/yourusername">
+            </div>
+            
+            <div class="form-group">
+                <label for="experience">Relevant Experience</label>
+                <textarea id="experience" name="experience" placeholder="Describe your relevant experience, projects, or coursework"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="why">Why are you interested in this internship?</label>
+                <textarea id="why" name="why" placeholder="Tell us why you're excited about this opportunity"></textarea>
+            </div>
+            
+            <div class="progress-container" id="progressContainer">
+                <div class="progress-bar">
+                    <div class="progress" id="progressBar"></div>
+                </div>
+                <div class="progress-text" id="progressText">0% uploaded</div>
+            </div>
+            
+            <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane" style="margin-right: 10px;"></i> Submit Application
+            </button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // File upload preview
+            const resumeInput = document.getElementById('resume');
+            const coverLetterInput = document.getElementById('coverLetter');
+            const resumePreview = document.getElementById('resumePreview');
+            const coverLetterPreview = document.getElementById('coverLetterPreview');
+            
+            // Handle resume upload
+            resumeInput.addEventListener('change', function(e) {
+                if (e.target.files.length > 0) {
+                    const file = e.target.files[0];
+                    displayFilePreview(file, resumePreview);
+                }
+            });
+            
+            // Handle cover letter upload
+            coverLetterInput.addEventListener('change', function(e) {
+                if (e.target.files.length > 0) {
+                    const file = e.target.files[0];
+                    displayFilePreview(file, coverLetterPreview);
+                }
+            });
+            
+            // Display file preview
+            function displayFilePreview(file, container) {
+                container.innerHTML = '';
+                
+                const fileElement = document.createElement('div');
+                fileElement.className = 'uploaded-file';
+                
+                const fileIcon = document.createElement('i');
+                fileIcon.className = 'fas fa-file-alt';
+                
+                const fileName = document.createElement('div');
+                fileName.className = 'uploaded-file-name';
+                fileName.textContent = file.name;
+                
+                const removeBtn = document.createElement('span');
+                removeBtn.className = 'remove-file';
+                removeBtn.innerHTML = '&times;';
+                removeBtn.addEventListener('click', function() {
+                    container.innerHTML = '';
+                    if (container === resumePreview) {
+                        resumeInput.value = '';
+                    } else {
+                        coverLetterInput.value = '';
+                    }
+                });
+                
+                fileElement.appendChild(fileIcon);
+                fileElement.appendChild(fileName);
+                fileElement.appendChild(removeBtn);
+                container.appendChild(fileElement);
+            }
+            
+            // Form submission with progress simulation
+            const applicationForm = document.getElementById('internshipApplication');
+            const progressContainer = document.getElementById('progressContainer');
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+            
+            applicationForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Validate required fields
+                if (!resumeInput.files || resumeInput.files.length === 0) {
+                    alert('Please upload your resume');
+                    return;
+                }
+                
+                // Show progress bar
+                progressContainer.style.display = 'block';
+                
+                // Simulate upload progress
+                let progress = 0;
+                const interval = setInterval(function() {
+                    progress += Math.random() * 10;
+                    if (progress >= 100) {
+                        progress = 100;
+                        clearInterval(interval);
+                        
+                        // Show success message after a short delay
+                        setTimeout(function() {
+                            alert('Application submitted successfully!');
+                            applicationForm.reset();
+                            resumePreview.innerHTML = '';
+                            coverLetterPreview.innerHTML = '';
+                            progressContainer.style.display = 'none';
+                            progressBar.style.width = '0%';
+                            progressText.textContent = '0% uploaded';
+                        }, 500);
+                    }
+                    
+                    progressBar.style.width = progress + '%';
+                    progressText.textContent = Math.round(progress) + '% uploaded';
+                }, 200);
+            });
+            
+            // Drag and drop functionality
+            const fileUploadBtns = document.querySelectorAll('.file-upload-btn');
+            
+            fileUploadBtns.forEach(btn => {
+                btn.addEventListener('dragover', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    this.style.borderColor = '#6a11cb';
+                    this.style.background = 'rgba(106, 17, 203, 0.1)';
+                    this.style.color = '#6a11cb';
+                });
+                
+                btn.addEventListener('dragleave', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    this.style.borderColor = '#c4c9d1';
+                    this.style.background = '#f8f9fa';
+                    this.style.color = '#555';
+                });
+                
+                btn.addEventListener('drop', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    this.style.borderColor = '#c4c9d1';
+                    this.style.background = '#f8f9fa';
+                    this.style.color = '#555';
+                    
+                    const input = this.querySelector('.file-upload-input');
+                    const containerId = input.id === 'resume' ? 'resumePreview' : 'coverLetterPreview';
+                    const container = document.getElementById(containerId);
+                    
+                    if (e.dataTransfer.files.length) {
+                        input.files = e.dataTransfer.files;
+                        displayFilePreview(e.dataTransfer.files[0], container);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

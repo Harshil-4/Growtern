@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.form-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+    position: relative;
+}
+
+.form-header {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 50%, #00d2ff 100%);
+    color: white;
+    padding: 25px 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.form-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+    transform: rotate(30deg);
+}
+
+.form-header h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.form-header p {
+    font-size: 16px;
+    opacity: 0.9;
+    position: relative;
+    z-index: 2;
+}
+
+.application-form {
+    padding: 30px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+    font-size: 15px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e0e3e7;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #6a11cb;
+    background-color: white;
+    box-shadow: 0 0 0 4px rgba(106, 17, 203, 0.1);
+    outline: none;
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.file-upload {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.file-upload-btn {
+    border: 2px dashed #c4c9d1;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+    color: #555;
+}
+
+.file-upload-btn:hover {
+    border-color: #6a11cb;
+    background: rgba(106, 17, 203, 0.05);
+    color: #6a11cb;
+}
+
+.file-upload-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.file-upload-text {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #777;
+}
+
+.file-upload-icon {
+    font-size: 40px;
+    color: #6a11cb;
+    margin-bottom: 10px;
+}
+
+.uploaded-files {
+    margin-top: 15px;
+}
+
+.uploaded-file {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 4px solid #6a11cb;
+}
+
+.uploaded-file i {
+    color: #6a11cb;
+    margin-right: 12px;
+    font-size: 18px;
+}
+
+.uploaded-file-name {
+    flex: 1;
+    font-size: 14px;
+    color: #444;
+}
+
+.remove-file {
+    color: #ff6b6b;
+    cursor: pointer;
+    font-size: 18px;
+    transition: transform 0.2s ease;
+}
+
+.remove-file:hover {
+    transform: scale(1.2);
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(106, 17, 203, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(106, 17, 203, 0.4);
+}
+
+.submit-btn:hover::before {
+    left: 100%;
+}
+
+.progress-container {
+    margin-top: 20px;
+    display: none;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+.progress-text {
+    font-size: 14px;
+    color: #666;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-header h2 {
+        font-size: 24px;
+    }
+
+    .application-form {
+        padding: 20px;
+    }
+}
