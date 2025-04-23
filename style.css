@@ -32,7 +32,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 
 body {
     background-color: #f5f7ff;
@@ -122,17 +122,7 @@ img {
     animation: fadeIn 0.3s ease;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 .dropdown:hover .dropdown-content {
     display: block;
@@ -229,18 +219,6 @@ img {
     flex: 1;
     padding-right: 40px;
     animation: slideInLeft 0.8s ease;
-}
-
-@keyframes slideInLeft {
-    from {
-        transform: translateX(-50px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
 }
 
 .hero-text h1 {
@@ -368,67 +346,11 @@ img {
     animation: slideInRight 0.8s ease;
 }
 
-@keyframes slideInRight {
-    from {
-        transform: translateX(50px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
 .hero-image img {
     max-width: 100%;
     height: auto;
     animation: float 4s ease-in-out infinite;
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
-}
-
-.floating-icons {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-}
-
-.floating-icon {
-    position: absolute;
-    color: white;
-    opacity: 0.6;
-    animation: float 3s ease-in-out infinite;
-}
-
-.floating-icon:nth-child(1) {
-    top: 10%;
-    left: 15%;
-    font-size: 24px;
-    animation-delay: 0s;
-}
-
-.floating-icon:nth-child(2) {
-    top: 70%;
-    left: 25%;
-    font-size: 30px;
-    animation-delay: 0.5s;
-}
-
-.floating-icon:nth-child(3) {
-    top: 30%;
-    right: 20%;
-    font-size: 20px;
-    animation-delay: 1s;
-}
-
-.floating-icon:nth-child(4) {
-    top: 80%;
-    right: 15%;
-    font-size: 28px;
-    animation-delay: 1.5s;
 }
 
 @keyframes float {
@@ -460,7 +382,6 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
     opacity: 0.03;
     z-index: -1;
 }
@@ -1358,12 +1279,12 @@ img {
 }
 
 @media (max-width: 768px) {
-    .navbar{
+    .navbar {
         position: static;
     }
-    .dropdown-content{
-        
-    }
+
+    .dropdown-content {}
+
     .nav-container {
         flex-direction: column;
     }
@@ -1417,9 +1338,10 @@ img {
 }
 
 @media (max-width: 576px) {
-    header{
+    header {
         position: relative;
     }
+
     .nav-links {
         flex-direction: column;
         align-items: center;
@@ -1459,4 +1381,3 @@ img {
         grid-template-columns: 1fr;
     }
 }
-

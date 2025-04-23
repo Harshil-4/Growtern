@@ -67,12 +67,6 @@
             <div class="hero-image">
                 <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
                     alt="Happy intern">
-                <div class="floating-icons">
-                    <div class="floating-icon"><i class="fas fa-rocket"></i></div>
-                    <div class="floating-icon"><i class="fas fa-lightbulb"></i></div>
-                    <div class="floating-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <div class="floating-icon"><i class="fas fa-briefcase"></i></div>
-                </div>
             </div>
         </div>
     </section>
@@ -562,51 +556,6 @@
                 const email = this.querySelector('input[type="email"]').value;
                 alert(`Thank you for subscribing with ${email}! You'll receive our next newsletter.`);
                 this.reset();
-            });
-
-            // Testimonial slider navigation
-            const testimonialSlider = document.querySelector('.testimonial-slider');
-            let isDown = false;
-            let startX;
-            let scrollLeft;
-
-            testimonialSlider.addEventListener('mousedown', (e) => {
-                isDown = true;
-                startX = e.pageX - testimonialSlider.offsetLeft;
-                scrollLeft = testimonialSlider.scrollLeft;
-                testimonialSlider.style.cursor = 'grabbing';
-            });
-
-            testimonialSlider.addEventListener('mouseleave', () => {
-                isDown = false;
-                testimonialSlider.style.cursor = 'grab';
-            });
-
-            testimonialSlider.addEventListener('mouseup', () => {
-                isDown = false;
-                testimonialSlider.style.cursor = 'grab';
-            });
-
-            testimonialSlider.addEventListener('mousemove', (e) => {
-                if (!isDown) return;
-                e.preventDefault();
-                const x = e.pageX - testimonialSlider.offsetLeft;
-                const walk = (x - startX) * 2;
-                testimonialSlider.scrollLeft = scrollLeft - walk;
-            });
-
-            // Category card hover effect
-            const categoryCards = document.querySelectorAll('.category-card');
-            categoryCards.forEach(card => {
-                card.addEventListener('mouseenter', function () {
-                    const icon = this.querySelector('.category-icon');
-                    icon.style.transform = 'scale(1.1) rotate(10deg)';
-                });
-
-                card.addEventListener('mouseleave', function () {
-                    const icon = this.querySelector('.category-icon');
-                    icon.style.transform = 'scale(1) rotate(0deg)';
-                });
             });
 
             // Animate elements when they come into view

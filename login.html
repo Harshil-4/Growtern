@@ -119,21 +119,6 @@
             signUp = document.querySelector(".signup-link"),
             login = document.querySelector(".login-link");
 
-        // Show/hide password and change icon
-        pwShowHide.forEach(eyeIcon => {
-            eyeIcon.addEventListener("click", () => {
-                pwFields.forEach(pwField => {
-                    if (pwField.type === "password") {
-                        pwField.type = "text";
-                        eyeIcon.classList.replace("fa-eye-slash", "fa-eye");
-                    } else {
-                        pwField.type = "password";
-                        eyeIcon.classList.replace("fa-eye", "fa-eye-slash");
-                    }
-                });
-            });
-        });
-
         // Switch between login and signup forms
         signUp.addEventListener("click", (e) => {
             e.preventDefault();
@@ -182,7 +167,7 @@
             } else if (!termsChecked) {
                 alert("Please accept the terms and conditions");
             } else {
-                alert("Account created successfully! Welcome to InterHive.");
+                alert("Account created successfully! Welcome to Growtern.");
                 // Here you would typically send data to server
                 container.classList.remove("active");
             }
